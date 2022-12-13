@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Activity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffe6e6;
+        }
+
+        h1 {
+            background-color: tomato;
+            border: 1px solid black;
+            outline: none;
+            height: 50px;
+            padding: 30px;
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.5em;
+            color: whitesmoke;
+            letter-spacing: 3px;
+        }
+
+        #feedBack {
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        #submitbtn {
+            background-color: #ffff66;
+            border: 2px solid black;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+        }
+        input,
+        textarea {
+            text-align: left;
+            width: 99%;
+            border: none;
+        }
+
+        .essentials {
+            height: 50px;
+            padding: 0px 4px 0px 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <!-- <legend>Form Activity 2</legend> -->
+            <h1>
+                Contact Us!
+            </h1>
+            <label><input type="text" name="name" value="" placeholder="Name.." class="essentials"
+                    required></label><br><br>
+            <label><input type="email" name="email" value="" placeholder="E-mail.." class="essentials"
+                    required></label><br><br>
+            <label><input type="text" name="subject" value="" placeholder="Subject.." class="essentials"
+                    required></label><br><br>
+            <label><textarea id="feedBack" rows="10" cols="30" maxlength="250" placeholder="message..."
+                    required></textarea></label><br><br>
+            <input type="submit" id="submitbtn" class="essentials" value="Send Message" onclick="submitfun();"></input>
+        </fieldset>
+    </form>
+</body>
+<script>
+    function submitfun(){
+        alert("Data Has been Submitted");
+    }
+</script>
+
+</html>

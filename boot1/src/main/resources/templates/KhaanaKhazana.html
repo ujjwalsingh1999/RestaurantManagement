@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Log IN - KhaanaKhazana</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Oswald&display=swap"
+	rel="stylesheet" />
+<script src="https://kit.fontawesome.com/f5310706a1.js"
+	crossorigin="anonymous"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+  body {
+background-image: linear-gradient(to right bottom, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff);
+    overflow-x: hidden;
+  }
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Great Vibes', cursive !Important;
+font-size: 3rem !Important;
+}
+
+  .container-fluid {
+    height: 24px;
+  }
+
+  ul {
+    color: white !important;
+    font-size: 1em;
+    /* height: 100%; */
+  }
+
+  .bg-dark {
+    background-color: #000 !important;
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+    font-size: 3em;
+    line-height: 0;
+    margin: 10px 0px;
+    font-size: 48px;
+    font-weight: 700;
+    padding: 40px 0px 40px 0px;
+  }
+
+
+  .mark {
+    background-color: black !important;
+    color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .headImg {
+    max-width: 100%;
+    position: absolute;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  h6 {
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    margin: 10px 0px;
+    font-weight: 400;
+  }
+
+  .subscribeSec {
+    display: inline-grid;
+    text-align: left !important;
+    height: auto;
+    width: 100%;
+    position: relative;
+    top: 12em;
+    padding: 2em;
+    /*margin-left: 2em;*/
+    /* padding: 12px 24px!important;
+    transform: translate(0%,75%);*/
+  }
+
+  .subscribeSec>h1 {
+    color: white;
+    text-align: left;
+  }
+
+  .btn-danger {
+    border: none;
+    background-color: #f44336 !important;
+    height:36px;
+    text-transform: capitalize;
+  }
+  .btn-danger:hover {
+    color: black;
+    background-color: #ccc;
+    border-color: #ccc;
+  }
+
+  .title-blog {
+    margin-left: 0px;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  hr {
+    margin: 5em 0em 3em 0em;
+  }
+
+  .title-blog>h3,
+  h5 {
+    text-align: center;
+    font-family: "Oswald";
+  }
+
+  .py-2 {
+    font-family: "Dancing Script", cursive;
+    padding-top: 1.5rem !important;
+  }
+
+  .title-blog>.text-center>img {
+    width: 100%;
+  }
+
+  .blogDesc {
+    text-align: left;
+    margin-top: 1em;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  header {
+    background-color: #21252900;
+      }
+
+  .mainHeader {
+    text-align: center;
+  }
+
+
+  .like-btn {
+    font-family: "Open Sans", sans-serif;
+    float: left;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000;
+    outline: 1px solid #ccc;
+    border: none;
+  }
+
+  .reply-btn {
+    float: right;
+    background-color: #000;
+    color: antiquewhite;
+    border: none;
+    outline: 2px solid black;
+  }
+
+  .reply-btn:hover {
+    opacity: 1;
+    color: #000;
+    background-color: #ccc;
+  }
+
+  .reply-text {
+    padding: 2px 9px 2px 9px;
+  }
+
+  .mainDiv {
+    background-color: white;
+  }
+
+  .comments {
+    width: 16.66%;
+  }
+
+  .btn-blog {
+    border: none;
+    display: inline-block;
+    padding: 8px 8px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .card {
+    text-align: left;
+    border: none;
+  }
+
+  .card-body {
+    padding: 1rem 0rem;
+  }
+
+  .card-title {
+    text-align: left;
+    float: left;
+  }
+
+  .card-text {
+    float: left;
+    margin-left: 16px;
+  }
+
+  .avtarDiv {
+    margin-top: 13px;
+    height: 180px;
+    width: 140px;
+  }
+
+  .w3-pad {
+    padding: 8px 16px !important;
+  }
+
+  .sideDesc {
+    text-align: left;
+    background-color: black;
+    color: white;
+    padding: 11px;
+  }
+
+  .sideDescHead {
+    font-family: "Oswald";
+  }
+
+  .sideHr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+
+  }
+
+  .popularSec {
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Oswald';
+    text-align: left;
+    padding: 0.5em;
+  }
+
+  .popularDesc {
+    text-align: left;
+    padding: 0rem;
+    background-color: #fff;
+  }
+
+  .postList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+  }
+
+  .webAD {
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .inspirationImg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .followSec {
+    text-align: left;
+    font-size: x-large;
+    padding: 0.5rem;
+  }
+
+  .followSec span:hover {
+    color: grey;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+    footer {
+      padding: 32px;
+      background-color: #616161!important;
+      margin-top: 1rem;
+    }
+  .footerBtn {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #111212;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.footerBtn:hover {
+  background: #999b9c;
+  text-decoration: none;
+  color: #111212 !important;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.navbar-brand{
+font-family: 'Great Vibes', cursive !Important;
+font-size: 1.65rem !Important;
+}
+
+/* Set a style for all buttons */
+.loginButton {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+		<a class="navbar-brand" href="#">KhaanaKhazana</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-item nav-link active" href="#">Home <span
+					class="sr-only">(current)</span></a> <a class="nav-item nav-link"
+					th:href="@{/Contactus}">Contact Us!</a> <a class="nav-item nav-link"
+					th:href="@{/ViewAllRestraunt}">View All</a>
+			</div>
+  			<form class="form-inline ml-auto"> 
+				<abbr title="logout"><a class="btn btn-light btn-outline-danger ml-auto mx-2"
+					th:href="@{/logout}"><i
+					class="fa-sharp fa-solid fa-right-from-bracket"></i></a></abbr>
+			</form>
+		</div>
+	</nav>
+	<div>
+		<header class="">
+			<div class="mainHeader pb-3">
+				<h1 class="centered">KhaanaKhazana</h1>
+				<img class="w-100"
+					src="https://png.pngtree.com/background/20210711/original/pngtree-gourmet-simple-bamboo-sushi-background-picture-image_1100283.jpg"
+					alt="banerImg">
+			</div>
+		</header>
+	</div>
+	<div class="row title-blog w3-pad">
+		<div class="col-8 text-center mainDiv px-4">
+			<h3 class="py-2">Chicken Skewers!</h3>
+			<h5 class="py-3">
+				Description <span class="text-muted">7/05/20222</span>
+			</h5>
+			<img src="https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?w=740&t=st=1670743580~exp=1670744180~hmac=8e2103d6b980d71904b5795dfe550b827c2625d3f6d872727beaa92365be9b7b"
+			 alt="foodIMG" class="w-100" />
+			<p class="blogDesc">
+				<strong>Skewers!!</strong> Metal skewers can actually help the chicken to cook faster, as the metal heats up and helps to cook the meat from the inside. However they're HOT and they retain their heat for longer - so be careful not to burn yourself.
+Wooden skewers can still be hot during cooking but they don't conduct heat within the chicken pieces and they don't retain their heat for as long. If you're using wooden skewers, soak them in water for an hour before using. 
+This will help to prevent them from burning during cooking.
+</p>
+			<p class="like-btn">
+				<button type="submit">
+					<i class="fa fa-thumbs-up btn-blog"></i>Like
+				</button>
+			</p>
+			<p class="reply-btn">
+				<button type="button" class="btn btn-outline-dark btn-blog"
+					id="btn-reply">
+					<b> replies &nbsp;</b> <span
+						style="background-color: antiquewhite; color: #000"
+						class="reply-text">1</span>
+				</button>
+			</p>
+				<hr />
+			<div class=" text-center mainDiv "
+			style="height: fit-content;">
+			<h3 class="py-2">Steaks!</h3>
+			<h5 class="py-3">
+				Description <span class="text-muted">7/05/20222</span>
+			</h5>
+			<img class="w-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Beef_fillet_steak_with_mushrooms.jpg/1200px-Beef_fillet_steak_with_mushrooms.jpg" alt="steaks" />
+			<p class="blogDesc">
+				<strong>Steaks!</strong>A steak is a thick cut of meat generally sliced across the muscle fibers, sometimes including a bone. It is normally grilled or fried. Steak can be diced, cooked in sauce, such as in steak and kidney pie, or minced and formed into patties, such as hamburgers.
+Steaks are cut from animals including cattle,
+ bison, camel, goat, horse, kangaroo, sheep, ostrich, pigs, reindeer, turkey, deer,
+  and zebu, as well as various types of fish, especially salmon and large fish such as swordfish, shark, and marlin. For some meats, such as pork, lamb and mutton, chevon, and veal, 
+these cuts are often referred to as chops.
+			</p>
+			<p class="like-btn">
+				<button type="submit">
+					<i class="fa fa-thumbs-up btn-blog"></i>Like
+				</button>
+			</p>
+			<p class="reply-btn">
+				<button type="button" class="btn btn-outline-dark btn-blog"
+					id="btn-reply">
+					<b> replies &nbsp;</b> <span
+						style="background-color: antiquewhite; color: #000"
+						class="reply-text">2</span>
+				</button>
+			</p>
+		</div>
+			
+		</div>
+		<div class="col-4 px-4">
+			<div>
+				<div>
+					<img
+						src="https://thumbs.dreamstime.com/b/sizzler-steaming-chicken-noodles-53827592.jpg"
+						alt="sizzelersImg" style="width: 100%" />
+				</div>
+				<div class="sideDesc">
+					<h4 class="sideDescHead">Sizzlers</h4>
+					<p>A sizzler is essentially a single dish meal, in which meats
+						and vegetables are cooked in a sauce on a hot metal plate. The
+						dish has been described as an "open-roasted, grilled or shallow
+						fried piece of meat, chicken, fish or vegetable patty, served on
+						an oval shaped metal or stone hot plate, kept on a wooden base.
+						The word "sizzler" comes from the sizzle that one hears after
+						heating the dish under a grill.</p>
+				</div>
+			</div>
+			<hr class="sideHr">
+			<div class="py-4">
+				<div class="popularSec">
+					<h4>Cuisines</h4>
+				</div>
+				<div class="popularDesc">
+					<ul class="postList">
+						<li class="list-group-item list-group-item-action py-3"><img
+							src="https://restaurantclicks.com/wp-content/uploads/2021/10/sushi-charlotte.jpg"
+							alt="sushiImg" style="width: 50px; float: left;" class="me-3">
+							<span> Sushi </span> <br> <span>Chef. Gordan</span></li>
+						<li class="list-group-item list-group-item-action py-3"><img
+							src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2017/06/ch27-1-paneermomos-1496903402.jpg"
+							alt="momoImage" style="width: 50px; float: left;" class="me-3">
+							<span> Dimsums </span> <br> <span>Chef. Sanjeev</span></li>
+						<li class="list-group-item list-group-item-action py-3"><img
+							src="https://www.solitarytraveller.com/wp-content/uploads/2020/10/seafood_indian-1024x768.jpg"
+							alt="Fishimg" style="width: 50px; float: left;" class="me-3">
+							<span> Sea Food </span> <br> <span>Chef. Nial</span></li>
+						<li class="list-group-item list-group-item-action py-3"><img
+							src="https://i.pinimg.com/736x/e8/bb/fe/e8bbfef4616d2bbee9a9f0cd3f35ded5.jpg"
+							alt="dessertImg" style="width: 50px; float: left;" class="me-3">
+							<span> Desserts </span> <br> <span>Chef. Ramesh</span></li>
+					</ul>
+				</div>
+				<hr class="sideHr">
+				<div>
+					<div class="py-4">
+						<div class="popularSec">
+							<h4>Advertisement</h4>
+						</div>
+						<div style="background-color: white; height: 200px;"
+							class="container py-3">
+							<div style="background-color: #ccc; height: 100%;">
+								<span class="webAD"> your ad goes here</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="sideHr">
+				<div class="popularSec">
+					<h4>Follow Us!</h4>
+				</div>
+				<div style="background-color: #fff;" class="followSec">
+					<span><i class="fab fa-facebook-square"></i></span> <span><i
+						class="fa-brands fa-instagram"></i></span> <span><i
+						class="fab fa-snapchat"></i></span> <span><i
+						class="fa fa-pinterest-p"></i></span> <span><i
+						class="fa fa-twitter"></i></span> <span><i class="fa fa-linkedin"></i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
